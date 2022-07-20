@@ -73,5 +73,12 @@
 					'';
 				});
 
+			apps.modpacksch = flake-utils.lib.mkApp {
+				drv = selfpkgs.modpacksch;
+				name = "modpacksch";
+			};
+
+			apps.default = self.apps.${system}.modpacksch;
+
 		};
 }
