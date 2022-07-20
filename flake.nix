@@ -8,8 +8,9 @@
 	inputs.go-src.url = "github:CreeperHost/modpacksch-serverdownloader/golang";
 	inputs.go-src.flake = false;
 
+	inputs.flake-utils.url = "github:numtide/flake-utils";
 
-	outputs = { self, nixpkgs, go-src }:
+	outputs = { self, nixpkgs, go-src, flake-utils }:
 		let
 
 			# to work with older version of flakes
