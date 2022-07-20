@@ -37,7 +37,7 @@
 					pkgs = nixpkgsFor.${system};
 				in
 				{
-					default = selfpkgs.modpacksch-server-downloader;
+					default = selfpkgs.modpacksch;
 
 					modpacksch-server-downloader = pkgs.buildGoModule {
 						pname = "ServerDownloader";
