@@ -65,6 +65,12 @@
 								-i main.go
 						'';
 					};
+
+					modpacksch = pkgs.runCommand "modpacksch-server-downloader-wrapper"
+						{ buildInputs = [ pkgs.makeBinaryWrapper ]; } ''
+						makeWrapper ${selfpkgs.modpacksch-server-downloader}/bin/ServerDownloader $out/bin/modpacksch \
+							--suffix PATH : ${pkgs.jre_headless}/bin
+					'';
 				});
 
 		};
