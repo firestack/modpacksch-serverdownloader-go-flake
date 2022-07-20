@@ -33,10 +33,13 @@
 			# Provide some binary packages for selected system types.
 			packages = forAllSystems (system:
 				let
+					selfpkgs = self.packages.${system};
 					pkgs = nixpkgsFor.${system};
 				in
 				{
-					go-hello = pkgs.buildGoModule {
+					default = selfpkgs.modpacksch-server-downloader;
+
+					modpacksch-server-downloader = pkgs.buildGoModule {
 						pname = "ServerDownloader";
 						inherit version;
 						# In 'nix develop', we don't need a copy of the source tree
@@ -64,9 +67,5 @@
 					};
 				});
 
-			# The default package for 'nix build'. This makes sense if the
-			# flake provides only one package or there is a clear "main"
-			# package.
-			defaultPackage = forAllSystems (system: self.packages.${system}.go-hello);
 		};
 }
