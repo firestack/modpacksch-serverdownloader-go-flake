@@ -37,7 +37,7 @@
 				in
 				{
 					go-hello = pkgs.buildGoModule {
-						pname = "go-hello";
+						pname = "ServerDownloader";
 						inherit version;
 						# In 'nix develop', we don't need a copy of the source tree
 						# in the Nix store.
