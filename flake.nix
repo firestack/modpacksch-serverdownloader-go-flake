@@ -5,7 +5,11 @@
 	inputs.nixpkgs.id = "nixos";
 	inputs.nixpkgs.type = "indirect";
 
-	outputs = { self, nixpkgs }:
+	inputs.go-src.url = "github:CreeperHost/modpacksch-serverdownloader/golang";
+	inputs.go-src.flake = false;
+
+
+	outputs = { self, nixpkgs, go-src }:
 		let
 
 			# to work with older version of flakes
@@ -37,7 +41,7 @@
 						inherit version;
 						# In 'nix develop', we don't need a copy of the source tree
 						# in the Nix store.
-						src = ./.;
+						src = go-src;
 
 						# This hash locks the dependencies of this package. It is
 						# necessary because of how Go requires network access to resolve
