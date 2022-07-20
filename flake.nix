@@ -2,7 +2,8 @@
 	description = "A simple Go package";
 
 	# Nixpkgs / NixOS version to use.
-	inputs.nixpkgs.url = "nixpkgs/nixos-21.11";
+	inputs.nixpkgs.id = "nixos";
+	inputs.nixpkgs.type = "indirect";
 
 	outputs = { self, nixpkgs }:
 		let
