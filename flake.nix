@@ -54,6 +54,13 @@
 						#vendorSha256 = pkgs.lib.fakeSha256;
 
 						vendorSha256 = "sha256-mq/wTuLf4PFDja7EaVGMs1/j6HkzEIwM1wVJAYiWtZs=";
+
+						preConfigure = ''
+							sed \
+								-e "s/{{COMMITHASH}}/${go-src.rev}/" \
+								-e "s/{{BUILDNAME}}/nix-build-${version}/" \
+								-i main.go
+						'';
 					};
 				});
 
