@@ -18,11 +18,11 @@
     "go-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1653932363,
-        "narHash": "sha256-R7C3D9tTa4BVx++n7+ap8U+FexdXEySk2jPQ0HsCnqk=",
+        "lastModified": 1658657702,
+        "narHash": "sha256-yXYDqvt3exh03ExYIcph72TsCRbj/V/Tqtrgy6sQkVU=",
         "owner": "CreeperHost",
         "repo": "modpacksch-serverdownloader",
-        "rev": "209cbc13888dd081d385cb4cf51134bb84593efa",
+        "rev": "114e0b75cec5a9fc5a102477728cba214a7489c0",
         "type": "github"
       },
       "original": {
